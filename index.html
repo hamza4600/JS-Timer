@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="heading">
+     <p>Are you ready for the Start Up</p>
+     <h2>Social Gaming Platform Is Here</h2>
+ </div>
+ <div class="timer">
+     <p id="day"></p>
+     <h6>days</h6>
+</div>
+<div class="timer">
+    <p id="hour"></p>
+    <h6>hours</h6>
+</div>
+<div class="timer">
+    <p id="minute"></p>
+    <h6>minutes</h6>
+</div>
+<div class="timer">
+    <p id="second"></p>
+    <h6>seconds</h6>    
+</div>  
+<div class="it">
+    IT will end in 2025
+</div>
+
+<script type="text/javascript">
+    const countDownDate= new Date("June 9, 2025 17:00:00").getTime();
+    const x= setInterval(function(){
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        
+        const days = Math.floor(distance/(1000*60*60*24));
+        const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+        const seconds=Math.floor((distance%(1000*60))/(1000));
+
+        document.getElementById("day").innerHTML=days;
+        document.getElementById("hour").innerHTML=hours;
+        document.getElementById("minute").innerHTML=minutes;
+        document.getElementById("second").innerHTML=seconds;   
+
+    });
+
+</script>
+
+    
+</body>
+</html>
